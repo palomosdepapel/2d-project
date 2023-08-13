@@ -21,6 +21,8 @@ public class script : MonoBehaviour
     public TextMeshProUGUI textoVida;  //referencia a un componente TextMeshProUGUI de Unity que muestra la vida del objeto en la interfaz de usuario. 
     public GameObject explosionImage; // Imagen de explosión a instanciar
 
+    public GameObject TextoGameOver;
+
     // Update is called once per frame
     void Update()
     {        
@@ -67,6 +69,7 @@ public class script : MonoBehaviour
                 GameObject explosion = Instantiate(explosionImage, impacto.transform.position, Quaternion.identity); // Instancia el objeto de la explosión en la posición del asteroide destruido
                 Destroy(explosion, 1f); // Destruye el objeto de la explosión después de fraciones de segundo
                 // Si la vida llega a cero, el objeto se destruye y se muestra "0" en el componente textoVida del HUD. 
+                TextoGameOver.SetActive(true);
                 Destroy(gameObject);
                 textoVida.text = "0";
             }
