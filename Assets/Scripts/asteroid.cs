@@ -12,7 +12,7 @@ public class asteroid : MonoBehaviour
     void Start()
     {
         // se establece que el asteroide se destruirá después de 10 segundos utilizando el método Destroy().
-        Destroy(gameObject, 10f);
+        Destroy(gameObject, 30f);
         
     }
 
