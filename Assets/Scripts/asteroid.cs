@@ -35,7 +35,7 @@ public class asteroid : MonoBehaviour
         if (collision.gameObject.tag == "Player") //Si el objeto tiene la etiqueta "Player", el propio asteroide se destruye.  
         {
             GameObject explosion = Instantiate(explosionImage, collision.transform.position, Quaternion.identity); // Instancia el objeto de la explosión en la posición del asteroide destruido
-            Destroy(explosion, 0.1f); // Destruye el objeto de la explosión después de fraciones de segundo
+            Destroy(explosion, 0.5f); // Destruye el objeto de la explosión después de fraciones de segundo
             Destroy(gameObject);
             
         }
