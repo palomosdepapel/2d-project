@@ -5,6 +5,7 @@ using Unity.Mathematics;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class script : MonoBehaviour
 {
@@ -61,7 +62,7 @@ public class script : MonoBehaviour
         {
             //Si es así, se reduce la vida del objeto en 15.
             life -= 15;
-            Debug.Log("Impact!!!" + impacto.gameObject.name);
+            //Debug.Log("Impact!!!" + impacto.gameObject.name);
 
             // si la vida llega a cero, esto objeto se destruye
             if (life <= 0)
@@ -74,7 +75,15 @@ public class script : MonoBehaviour
                 textoVida.text = "0";
             }
         }
+    }
 
+    public void OnTriggerEnter2D(Collider2D collisionx)
+    {
+        if (collisionx.gameObject.tag == "portal")
+        {
+            Debug.Log("Warp!!!");
+            SceneManager.LoadScene(1);
+        }
     }
 
 }

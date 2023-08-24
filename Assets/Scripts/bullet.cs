@@ -25,7 +25,7 @@ public class bullet : MonoBehaviour
     public void OnCollisionEnter2D(Collision2D other)
     {
         // se activa cuando la bala colisiona con otro objeto.
-        Debug.Log("BAAAAANNNG!!!" + other.gameObject.name);
+        //Debug.Log("BAAAAANNNG!!!" + other.gameObject.name);
         // si el objeto tiene la etiqueta "Asteroid", se destruye utilizando el método Destroy(). 
         if (other.gameObject.tag == "Asteroid")
         {

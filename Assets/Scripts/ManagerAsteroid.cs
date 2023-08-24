@@ -25,7 +25,7 @@ public class ManagerAsteroid : MonoBehaviour
         // se crea un nuevo asteroide utilizando la función Instantiate().
         // El asteroide se crea en la posición y rotación del objeto que tiene el script ManagerAsteroid. 
         Instantiate(asteroid,transform.position, transform.rotation);
-        Debug.Log("Se ha creado un nuevo asteroide");
+        //Debug.Log("Se ha creado un nuevo asteroide");
         //Invoke("CreateAsteroid", 1);
         counter += 1; //  El contador se incrementa en 1
 
