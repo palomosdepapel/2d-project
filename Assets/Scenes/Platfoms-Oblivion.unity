@@ -1621,7 +1621,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   myTransform: {fileID: 1052006651}
   x: 0
-  y: 0
   speed: 4
   myRb: {fileID: 1052006649}
   jumpForce: 3
@@ -1965,7 +1964,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1575472599}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -10}
+  m_LocalPosition: {x: -4.95, y: 0, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
