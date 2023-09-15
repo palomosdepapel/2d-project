@@ -54,12 +54,12 @@ public class player_platform : MonoBehaviour
         // Control de salto (salto sencillo)
         if (Input.GetKeyDown(KeyCode.Space) && iCanJump == true  )
         {
-            myRb.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
+            Saltar();
         }
         // Control de salto (doble salto)
         if (Input.GetKeyDown(KeyCode.Space) && jumpsRemaining > 0)
         {
-            myRb.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
+            Saltar();
             jumpsRemaining--; // Reduce el número de saltos restantes
         }
 
@@ -83,5 +83,10 @@ public class player_platform : MonoBehaviour
             iCanJump = false;
             myAnimator.SetBool("ItsOnTheFloor", false); // viene del animator
         }
+    }
+
+    public void Saltar()
+    {
+        myRb.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
     }
 }
