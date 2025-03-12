@@ -1,14 +1,19 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class player_platform : MonoBehaviour
 {
+    public float health;
+
     [Header("Movement and speed")]
+    public VariableJoystick myJoystick;
     public Transform myTransform;
     public float x; // var movimiento horizontal
     //public float y; // var movimiento vertical
     public float speed;
+    
 
     [Header("Jump")]
     public Rigidbody2D myRb;
@@ -20,6 +25,8 @@ public class player_platform : MonoBehaviour
     [Header("Related animations")]
     public Animator myAnimator;
 
+    public Slider mySlider;
+
     void Start()
     {
         jumpsRemaining = maxJumps; // Inicializa los saltos restantes al número máximo de saltos permitidos
@@ -28,6 +35,8 @@ public class player_platform : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        mySlider.value = health;
+
         // Se obtiene el valor de la entrada horizontal del usuario y se asigna a la variable x
         x = Input.GetAxis("Horizontal");
         myTransform.position += new Vector3(x, 0, 0) * speed * Time.deltaTime;
@@ -65,6 +74,20 @@ public class player_platform : MonoBehaviour
 
     }
 
+    public void Saltar()
+    {
+        myRb.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
+    }
+
+    public void MoverDerecha()
+    {
+        
+    }
+    public void MoverIzquierda()
+    {
+
+    }
+
     public void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.tag == "Suelo")
@@ -85,8 +108,5 @@ public class player_platform : MonoBehaviour
         }
     }
 
-    public void Saltar()
-    {
-        myRb.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
-    }
+  
 }
